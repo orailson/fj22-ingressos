@@ -12,7 +12,7 @@ public class Ingresso {
 	
 	public Ingresso(Sessao sessao, Desconto tipoDesconto) {
 		this.sessao = sessao;
-		this.preco = tipoDesconto.aplicarDescontoSobre(preco);
+		this.preco = tipoDesconto.aplicarDescontoSobre(sessao.getPreco());
 	}
 
 	public Ingresso() {
