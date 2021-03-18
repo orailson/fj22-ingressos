@@ -1,5 +1,6 @@
 package br.com.caelum.ingresso.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,5 +27,9 @@ public class Carrinho {
 
 	public void setIngressos(List<Ingresso> ingressos) {
 		this.ingressos = ingressos;
+	}
+	
+	public BigDecimal getTotal() {
+		return ingressos.stream().map(Ingresso::getPreco).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
 	}
 }
